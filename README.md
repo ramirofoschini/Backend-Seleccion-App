@@ -1,6 +1,6 @@
-# Backend-Seleccion-App
-Version de java: 17
-La app corre en el puerto 8080
-Base de datos MySQL
+# Backend-Seleccion-App <br>
+Version de java: 17 <br>
+La app corre en el puerto 8080 <br>
+Base de datos MySQL <br>
  User: root
  Pass: 1234
