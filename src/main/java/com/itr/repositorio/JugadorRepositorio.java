@@ -1,10 +1,11 @@
-package repositorio;
+package com.itr.repositorio;
 
-import model.Jugador;
+import com.itr.modelo.Jugador;
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface JugadorRepositorio extends JpaRepository<Jugador, Long> {
+public interface JugadorRepositorio extends JpaRepository<Jugador, Integer> {
 
 }
