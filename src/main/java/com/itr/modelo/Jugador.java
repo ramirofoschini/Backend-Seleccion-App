@@ -2,38 +2,35 @@ package com.itr.modelo;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+import java.io.Serial;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 @Data
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table
+
 public class Jugador implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Integer id;
     private String nombre;
     private String apellido;
     private Integer edad;
     private String equipo;
+    private enum Pos {ARQUERO, DEFENSOR, MEDIOCAMPISTA, DELANTERO}
 
-    @ElementCollection
-    private List<String> pos;
+    @Column(columnDefinition = "ENUM('ARQUERO', 'DEFENSOR', 'MEDIOCAMPISTA', 'DELANTERO')")
+    @Enumerated(EnumType.STRING)
+    private Pos posicion;
 
-    public Jugador(Integer id, String nombre, String apellido, Integer edad, String equipo, List<String> pos) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.equipo = equipo;
-        this.pos = pos;
-    }
-
-    public Jugador() {
-        
-    }
 }

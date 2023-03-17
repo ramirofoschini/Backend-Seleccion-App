@@ -20,8 +20,9 @@ this.jugadorServicio = jugadorServicio;
 }
 
 
-    @GetMapping()
+    @GetMapping
     public List<Jugador> listarJugadores (){
+
     return jugadorServicio.listarJugadores();
 }
     @GetMapping("/{id}")
