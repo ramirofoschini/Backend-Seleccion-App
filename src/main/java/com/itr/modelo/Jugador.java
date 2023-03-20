@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -31,6 +32,7 @@ public class Jugador implements Serializable {
 
     @Column(columnDefinition = "ENUM('ARQUERO', 'DEFENSOR', 'MEDIOCAMPISTA', 'DELANTERO')")
     @Enumerated(EnumType.STRING)
-    private Pos posicion;
+    @ElementCollection
+    private List<Pos> posicion;
 
 }
